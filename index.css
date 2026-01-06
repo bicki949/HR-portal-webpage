@@ -1,0 +1,590 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+} */
+body {
+  background: linear-gradient(180deg, #eef4fb 0%, #f3f7fb 40%, #ffffff 100%);
+}
+
+header {
+  background-color: #2c3e50;
+  padding: 20px;
+}
+.header h1 {
+  color: #ffeeee;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Subtle underline that slides from center */
+.hr-portal-heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0;
+  height: 3px;
+  background-color: #2e5eaa; /* Soft HR blue */
+  transition: all 0.4s ease;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+/* Hover effect: underline + slight lift + color change + glow */
+.hr-portal-heading:hover::after {
+  width: 100%; /* underline expands */
+}
+
+.hr-portal-heading:hover {
+  color: #2e5eaa; /* soft blue text on hover */
+  transform: translateY(-3px); /* subtle lift */
+  text-shadow: 2px 2px 6px rgba(46, 94, 170, 0.25); /* soft glow */
+}
+
+header {
+  /* Modern Gradient Background */
+  background: linear-gradient(135deg, #4a00e0 0%, #8e2de2 100%);
+  padding: 40px 0;
+  text-align: center;
+  color: white; /* Makes the H1 white */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+/* --- Navigation Menu --- */
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.navitem {
+  margin: 0 15px;
+}
+
+.navitem a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* --- Animated Underline Style --- */
+.navitem a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Hidden by default */
+  height: 2px;
+  background-color: #e91e63; /* Pink accent color */
+  transition: width 0.3s ease; /* Animate the width */
+}
+
+.navitem a:hover {
+  color: #e91e63; /* Change text color on hover */
+}
+
+.navitem a:hover::after {
+  width: 100%; /* Expand underline on hover */
+}
+
+/* Smooth Scrolling for the whole page */
+html {
+  scroll-behavior: smooth;
+}
+/* Glass card form */
+
+.contact-card {
+  display: flex;
+  width: 900px;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.main-container {
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically (if the parent has height) */
+  padding: 50px 0; /* Adds space above and below */
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  animation: float 4s ease-in-out infinite;
+}
+.main-container:hover {
+  transform: scale(1.07) rotateX(5deg) rotateY(5deg) translateY(-10px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.05); /* slightly brighter */
+}
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-5px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.main-container {
+  animation: float 4s ease-in-out infinite; /* slow gentle float */
+}
+
+/* Left Side Styling */
+.contact-form {
+  flex: 1.2;
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  padding: 50px;
+  color: rgb(255, 255, 255);
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.contact-form h2 {
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.input-group {
+  margin-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.input-group input,
+.input-group textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 10px 0;
+  font-size: 16px;
+}
+
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.btn-send {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Right Side Styling */
+.contact-info {
+  flex: 1;
+  padding: 50px;
+  color: #333;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.contact-info h3::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #e91e63;
+}
+
+.contact-info p {
+  color: #777;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  background: #f8f9fa;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  color: #4a00e0;
+}
+
+.info-item p {
+  margin: 0;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-card {
+    flex-direction: column;
+    width: 95%;
+  }
+}
+
+.contact-info h3 {
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-info h3::after {
+  content: "";
+  position: absolute;
+  left: 50%; /* Start in the middle */
+  bottom: -2px;
+  width: 0; /* Hidden initially */
+  height: 2px;
+  background: #e91e63;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(-50%); /* Keeps it centered as it grows */
+}
+
+.contact-info h3:hover::after {
+  width: 100%; /* Grows to full width of the text */
+}
+
+/* Form heading */
+.registerform h2 {
+  text-align: center;
+  color: #00fff7; /* neon cyan */
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #00fff7;
+}
+
+.registerform p {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+/* Form */
+.employeetable {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.employeetable h2 {
+  margin-bottom: 10px;
+  font-size: 28px;
+  color: #333;
+}
+
+.employeetable table {
+  width: 80%;
+  margin: 30px auto; /* Centers the table */
+  border-collapse: collapse; /* Removes double borders */
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures corners are rounded */
+}
+
+.employeetable th {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0); /* Matches form */
+  color: white;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.employeetable td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+/* Zebra Striping: Adds color to every second row */
+.employeetable tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Hover effect for rows */
+.employeetable tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: default;
+}
+
+.contact-us-footer {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.contact-us-footer h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact-us-footer p {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Style the time as a badge */
+.time-badge {
+  background: #f1f1f1;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #4a00e0;
+}
+
+/* Map Container */
+.map-section {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center; /* Centers the map horizontally */
+  background-color: #f8f9fa;
+}
+
+.map-container {
+  position: relative; /* Needed to place the marker on top */
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  border: 10px solid white;
+}
+
+/* --- The Pulse Animation --- */
+.map-marker-container {
+  position: absolute;
+  top: 50%; /* Adjust these % to match your exact location on the map */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: none; /* Allows you to still click the map underneath */
+}
+
+.marker-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #e91e63; /* Pink from your theme */
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.pulse-ring {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e91e63;
+  border-radius: 50%;
+  top: -14px;
+  left: -14px;
+  animation: mapPulse 2s infinite;
+}
+
+@keyframes mapPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Hover Effect for the whole container */
+.map-container:hover {
+  transition: 0.5s;
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px rgba(74, 0, 224, 0.2); /* Purple tinted shadow */
+}
+.retirement-section {
+  padding: 80px 10%;
+  background-color: #fdfdfd; /* Slightly different white to separate sections */
+}
+
+.section-header h3 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.section-header p {
+  color: #888;
+  margin-bottom: 30px;
+}
+
+/* Modern Table Styling */
+.retirement-section {
+  padding: 80px 0;
+  background-color: #fdfdfd;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h3 {
+  font-size: 2rem;
+  color: #2d3436;
+  text-transform: capitalize;
+}
+
+.section-header p {
+  color: #636e72;
+  font-style: italic;
+}
+
+/* Modern Table Layout */
+.modern-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px; /* Creates the "floating row" effect */
+}
+
+.modern-table th {
+  padding: 15px 25px;
+  color: #b2bec3;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.modern-table tbody tr {
+  background-color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modern-table tbody tr:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+}
+
+.modern-table td {
+  padding: 20px 25px;
+  color: #2d3436;
+  font-size: 1rem;
+}
+
+/* Rounding the corners of individual rows */
+.modern-table td:first-child {
+  border-radius: 12px 0 0 12px;
+}
+
+/* The "Date" column gets a special color for emphasis */
+.modern-table td:last-child {
+  color: var(--primary-purple);
+  font-weight: bold;
+}
+/* 4. The Hover Effect */
+/* Color the Hover State */
+.modern-table tbody tr:hover {
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #fdfaff
+  ); /* Subtle gradient on hover */
+  border-left: 5px solid var(--accent-pink); /* Pink stripe appears on the left */
+}
+
+/* image--section apple-hero*/
+.apple-hero {
+  height: 500px;
+  width: 100%;
+  /* Replace this URL with a high-res office shot */
+  background: url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Creates a smooth parallax scroll */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7); /* Translucent white */
+  backdrop-filter: blur(15px); /* The "Apple" frosted glass effect */
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+}
+
+.glass-card h1 {
+  font-size: 2.5rem;
+  color: #1d1d1f; /* Apple's specific dark grey text color */
+  margin-bottom: 10px;
+}
+
+.status-indicator {
+  background: #34c759; /* Apple's iOS "Success" Green */
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #0071e3; /* Apple's Signature Blue */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background: #0077ed;
+  transform: translateY(-2px);
+}
